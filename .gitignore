@@ -1,2 +1,2 @@
-/mysql/data
-/conf/nginx/logs
+/mysql/data/*
+/conf/nginx/logs/*
