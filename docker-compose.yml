@@ -9,7 +9,7 @@ services:
             - ./web:/web:rw
             - ./tool:/tool:rw
             - ${CONF}/nginx/conf:/usr/local/nginx/conf:rw
-            - ${CONF}/nginx/logs:/usr/local/nginx/logs
+            - ${CONF}/nginx/logs:/usr/local/nginx/logs:rw
             - ${CONF}/php_fpm/:/usr/local/php/${PHP_VERSION}/etc/:rw
             - ${CONF}/php/:/etc/php/${PHP_VERSION}/cli/:rw
         ports:
@@ -25,7 +25,7 @@ services:
         image: mysql:5.6
         volumes:
             - ./mysql/data:/var/lib/mysql:rw
-            - ./mysql/conf:/etc/mysql
+            - ./mysql/conf:/etc/mysql:rw
         privileged: true         
         ports:
             - "3306:3306"
