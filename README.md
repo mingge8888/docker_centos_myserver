@@ -8,7 +8,7 @@
  * ##  [查详细教程](http://www.docker.org.cn/book/)
 
 ## 1、安装docker
-*  ##  [点击下载](http://weibo.com/ihubo)
+*  ##  [点击下载](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
 
 
 ### 2、设置代理
