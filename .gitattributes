@@ -1,2 +1,3 @@
-*.php linguist-language=php
-
+*.js linguist-language=Dockerfile
+*.css linguist-language=Dockerfile
+*.html linguist-language=Dockerfile
