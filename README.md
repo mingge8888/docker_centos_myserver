@@ -4,7 +4,7 @@
 ##  介绍本项目
   本项目以`centos7`为主容器，集成了`sqlserver`扩展驱动，`swoole`、`php`、`mysql`、`redis`、`nginx`等等组件 , 所有配置文件在项目中的`conf`，请自行进行配置,也可以在此基础上增加其他组件，centos部署环境就是这么简单
 
-##  docker详细官方教程
+##  docker官方详细教程
  * ##  [查详细教程](http://www.docker.org.cn/book/)
 
 ## 1、安装docker
