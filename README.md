@@ -18,7 +18,7 @@
      ### `http://f1361db2.m.daocloud.io`
 
 ### 3、启动docker容器文件
-   * 建议使用`vscode编辑器`，然后在vscode安装`docker`扩展，这样你会少打很多合命令
+   * 建议使用`vscode编辑器`，然后在vscode安装`docker`扩展，这样你会少打很多繁琐的命令
    * 命行进入项目 cd /docker_centos_myserver , 输入 `docker-compose up`  或者`docker-compose up --build` 
    * 到此，等待容器构建完成即可 
    * 完成访问：     [http://127.0.0.1/](http://127.0.0.1/)
