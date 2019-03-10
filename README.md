@@ -1,7 +1,9 @@
  <img src="docker-logo.jpg" width="200" hegiht="200" align="center" />
 
 ##  介绍docker_centos_myserver
-  本项目以`centos7`为宿主容器，集成了`php-7.1.14`、`mysql-5.7`、`nginx-1.15.9`等等最新环境,以及`sqlserver-5.6.0`、`swoole-4.0.3`、`redis-1.2.4`、`gd库`等最新扩展,也可以在此基础上增加其他组件,所有配置文件在项目中的`conf`目录内，请自行进行配置,centos部署环境就是这么简单
+  本项目以`centos7`为宿主容器，集成了`php-7.1.14`、`mysql-5.7`、`nginx-1.15.9`等等最新环境,以及`sqlserver-5.6.0`、`swoole-4.0.3`、`redis-1.2.4`、`gd库`等最新扩展,也可以在此基础上增加其他组件,所有配置文件在项目中的`conf`目录内，请自行进行配置, centos部署环境就是这么简单。
+  * 根目录内 `启动.bat`、`停止.bat` 可以启动及停止容器。
+   
 
 ##  docker官方详细教程
  * ##  [查看官方教程](http://www.docker.org.cn/book/)
@@ -12,7 +14,7 @@
 
 ### 2、设置代理（重要）
   *  安装后完成后等待右下角鲸鱼图标静止为启动完成，
-  *  启动完成后在右下角鲸鱼图标点击右键,再点击`Strings`,在界面的左边栏目找到`Daemon`,然后在右边`Registry mirrosrs`添加下面地址
+  *  启动完成后在右下角鲸鱼图标点击右键,再点击`Strings`,在界面的左边栏目找到`Daemon`,然后在右边`Registry mirrosrs`添加下面地址。
  *   ```html
       http://f1361db2.m.daocloud.io
      ```
@@ -24,8 +26,9 @@
 
 ### 4、启动docker_centos_myserver容器文件
    * 建议使用`vscode编辑器`，再在vscode安装`docker`工具，这样   你会少打很多繁琐的命令，更容易上手docker
-   * 命令行进入项目 cd /docker_centos_myserver , 输入 `docker-compose up`  或者`docker-compose up --build` 
-   * 部署需要一定时间，因机器配置或网络决定 
+   * 命令行进入项目 cd /docker_centos_myserver , 输入 `docker-compose up`。
+   * 最简单方式是双击项目根目录双击 `启动.bat`、`停止.bat` 文件，开机自动启动容器，只需要把 `启动.bat`快捷方式放入启动项即可。
+   * 第一次起动容器部署需要一定时间，因机器配置或网络决定 
    * 部署完成查看http演试: [http://127.0.0.1/](http://127.0.0.1/)
 
 ### 5、注意事项
