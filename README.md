@@ -1,10 +1,10 @@
  <img src="docker-logo.jpg" width="200" hegiht="200" align="center" />
 
 ##  介绍docker_centos_myserver
-  本项目以`centos7`为宿主容器，`php-7.1.14`、`mysql-5.7`、`nginx-1.15.9`等等最新环境,以及集成了`sqlserver-5.6.0`、`swoole-4.0.3`、`redis-1.2.4`、`gd库`等最新扩展,也可以在此基础上增加其他组件,所有配置文件在项目中的`conf`目录内，请自行进行配置,centos部署环境就是这么简单
+  本项目以`centos7`为宿主容器，集成了`php-7.1.14`、`mysql-5.7`、`nginx-1.15.9`等等最新环境,以及`sqlserver-5.6.0`、`swoole-4.0.3`、`redis-1.2.4`、`gd库`等最新扩展,也可以在此基础上增加其他组件,所有配置文件在项目中的`conf`目录内，请自行进行配置,centos部署环境就是这么简单
 
 ##  docker官方详细教程
- * ##  [查看详细教程](http://www.docker.org.cn/book/)
+ * ##  [查看官方教程](http://www.docker.org.cn/book/)
 
 ## 1、安装docker
 *  ##  [点击下载](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
@@ -36,5 +36,5 @@
 ### 项目作者
   * `岑明（号明哥，当代全栈高级工程师，而且长得很帅）`
   * `QQ:2945157617`
-  * 2019/3/10 15:50
+  * 2019/3/11 15:50
 

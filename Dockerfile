@@ -106,20 +106,15 @@ RUN cd ${SRC_DIR}/php-${PHP_VERSION} \
     && rm -f ${SRC_DIR}/php-${PHP_VERSION}.tar.gz \
     && rm -rf ${SRC_DIR}/php-${PHP_VERSION}
 #sqlserver
-
- RUN cd ${SRC_DIR}/ \
-     && mkdir pdo_sqlsrv \
-    && wget https://pecl.php.net/get/pdo_sqlsrv-${PDO_SQLSRV_VERSION}.tgz \
-    && tar -zxvf pdo_sqlsrv-${PDO_SQLSRV_VERSION}.tgz \
-    && cd pdo_sqlsrv-${PDO_SQLSRV_VERSION} \
-    && /usr/local/php/${PHP_VERSION}/bin/phpize \
+  ADD install/pdo_sqlsrv-${PDO_SQLSRV_VERSION}.tgz ${SRC_DIR}/
+  RUN cd ${SRC_DIR}/pdo_sqlsrv-${PDO_SQLSRV_VERSION} \
+    && ${SRC_DIR}/php/${PHP_VERSION}/bin/phpize \
     && ./configure --with-php-config=/usr/local/php/${PHP_VERSION}/bin/php-config \
     && make \
     && make install \
     && echo "pdo_sqlsrv.so" > ${INIT_FILE}/pdo_sqlsrv.ini \
-    && rm -f ${SRC_DIR}/pdo_sqlsrv/pdo_sqlsrv-${PDO_SQLSRV_VERSION}.tgz \
-    && rm -rf ${SRC_DIR}/pdo_sqlsrv/pdo_sqlsrv-${PDO_SQLSRV_VERSION} \
-    && rm -rf ${SRC_DIR}/pdo_sqlsrv
+    && rm -f ${SRC_DIR}/pdo_sqlsrv-${PDO_SQLSRV_VERSION}.tgz \
+    && rm -rf ${SRC_DIR}/pdo_sqlsrv-${PDO_SQLSRV_VERSION} 
 #  hiredis
 ADD install/hiredis-${HIREDIS_VERSION}.tar.gz ${SRC_DIR}/
 RUN cd ${SRC_DIR}/hiredis-${HIREDIS_VERSION} \
