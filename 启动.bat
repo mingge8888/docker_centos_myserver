@@ -1,4 +1,4 @@
-@ECHO OFF
+﻿@ECHO OFF
 @chcp 65001>nul 2>nul
 @ECHO OFF&PUSHD %~DP0 &TITLE docker容器启动工具开发 作者:岑明 QQ2945157617
 color 1f
