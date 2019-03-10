@@ -1,4 +1,4 @@
- <img src="docker-logo" width="200" hegiht="200" align="center" />
+ <img src="docker-logo.jpg" width="200" hegiht="200" align="center" />
 
 ##  介绍docker_centos_myserver
   本项目以`centos7`为宿主容器，集成了`sqlserver`、`swoole`、`redis`、GD等扩展以及 `php`、`mysql`、`nginx`等等环境 ,也可以在此基础上增加其他组件,所有配置文件在项目中的`conf`目录内，请自行进行配置,centos部署环境就是这么简单
