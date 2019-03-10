@@ -180,7 +180,7 @@ RUN cd ${SRC_DIR}/php-inotify-${PHPINOTIFY_VERSION} \
     && echo "extension=inotify.so" > ${INIT_FILE}/inotify.ini \
     && rm -f ${SRC_DIR}/inotify-${PHPINOTIFY_VERSION}.tar.gz \
     && rm -rf ${SRC_DIR}/php-inotify-${PHPINOTIFY_VERSION}
-
+#  添加用户组，提供给php-fpm
 RUN groupadd www-data \
     && useradd -g www-data www-data 
 COPY ./install/php/* ${INIT_FILE}/
