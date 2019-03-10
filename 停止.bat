@@ -1,15 +1,17 @@
-@ECHO OFF&PUSHD %~DP0 &TITLE dockerÈÝÆ÷Æô¶¯¹¤¾ß¿ª·¢ ×÷Õß:á¯Ã÷ QQ2945157617
+@ECHO OFF
+@chcp 65001>nul 2>nul
+@ECHO OFF&PUSHD %~DP0 &TITLE dockerå®¹å™¨å¯åŠ¨å·¥å…·å¼€å‘ ä½œè€…:å²‘æ˜Ž QQ2945157617
 color 1f
 @echo off
 docker ps>nul 2>nul
 if "%errorlevel%"=="0" (
 color 1f
 docker-compose kill
-echo *******************************ÒÑÍ£Ö¹ÈÝÆ÷*******************************
+echo *******************************å·²åœæ­¢å®¹å™¨*******************************
 )  else (
-color 1c
-echo  *******************************docker·þÎñ»¹Ã»Æô¶¯************************ 
-) 
-echo ÍË³ö¡­¡­°´ÈÎÒâ¼ü
-pause> nul
-exit
+color 1c 
+echo  *******************************dockeræœåŠ¡è¿˜æ²¡å¯åŠ¨************************ 
+)
+echo é€€å‡ºè¯·æŒ‰ä»»æ„é”®
+pause> nul       
+exit   
