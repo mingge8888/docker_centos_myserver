@@ -55,8 +55,6 @@ RUN cd ${SRC_DIR}/nginx-${NGINX_VERSION}\
     --with-http_stub_status_module \
     --with-http_ssl_module \
     --with-pcre \
-    # --with-zlib \
-    # --with-openssl \
     --with-http_realip_module \
    &&make \
     &&make install \
@@ -81,7 +79,8 @@ RUN cd ${SRC_DIR}/php-${PHP_VERSION} \
        --with-gd \
        --with-jpeg-dir=/usr \
        --with-png-dir=/usr \
-       --with-freetype=/usr \
+       --with-freetype-dir=/usr \
+	   --with-zlib-dir \
        --with-curl \
        --with-libedit \
        --with-openssl \
@@ -90,7 +89,6 @@ RUN cd ${SRC_DIR}/php-${PHP_VERSION} \
        --with-mysqli \
        --with-pdo-mysql \
        --with-pear \
-       --with-zlib \
        --with-fpm-user=www-data \
        --with-fpm-group=www-data \
     && make clean > /dev/null \
