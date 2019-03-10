@@ -1,11 +1,10 @@
- 
- <img src="logo.jpg" width="200" hegiht="200" align="center" />
+ <img src="docker-logo" width="200" hegiht="200" align="center" />
 
-##  介绍本项目
-  本项目以`centos7`为宿主容器，集成了`sqlserver`、`swoole`、`redis`、GD等扩展以及 `php`、`mysql`、`nginx`等等环境 , 所有配置文件在项目中的`conf`目录内，请自行进行配置,也可以在此基础上增加其他组件，centos部署环境就是这么简单
+##  介绍docker_centos_myserver
+  本项目以`centos7`为宿主容器，集成了`sqlserver`、`swoole`、`redis`、GD等扩展以及 `php`、`mysql`、`nginx`等等环境 ,也可以在此基础上增加其他组件,所有配置文件在项目中的`conf`目录内，请自行进行配置,centos部署环境就是这么简单
 
 ##  docker官方详细教程
- * ##  [查详细教程](http://www.docker.org.cn/book/)
+ * ##  [查看详细教程](http://www.docker.org.cn/book/)
 
 ## 1、安装docker
 *  ##  [点击下载](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
@@ -16,10 +15,10 @@
   *  启动完成后在右下角鲸鱼图标点击右键,再点击`Strings`,在界面的左边栏目找到`Daemon`,然后在右边`Registry mirrosrs`添加下面地址
      ### `http://f1361db2.m.daocloud.io`
 
-### 3、启动docker容器文件
+### 3、启动docker_centos_myserver容器文件
    * 建议使用`vscode编辑器`，再在vscode安装`docker`工具，这样   你会少打很多繁琐的命令，更容易上手docker
    * 命令行进入项目 cd /docker_centos_myserver , 输入 `docker-compose up`  或者`docker-compose up --build` 
-   * 部署时间需要一定时间，因机器配置或网络决定 
+   * 部署需要一定时间，因机器配置或网络决定 
    * 部署完成查看http演试: [http://127.0.0.1/](http://127.0.0.1/)
 
 ### 4、注意事项
@@ -29,5 +28,6 @@
 
 ### 项目作者
   * `岑明（号明哥，当代全栈高级工程师，而且长得很帅）`
-  * 2019/3/10 0:12
+  * `QQ:2945157617`
+  * 2019/3/10 15:50
 

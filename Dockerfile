@@ -10,14 +10,12 @@ ENV HIREDIS_VERSION 0.13.3
 ENV PHPREDIS_VERSION 3.1.6
 ENV PHPDS_VERSION 1.2.4
 ENV PHPINOTIFY_VERSION 2.0.0
-ENV NGINX_VERSION 1.8.1
+ENV NGINX_VERSION 1.15.9
 ENV PDO_SQLSRV_VERSION 5.6.0
 #set ldconf
 RUN echo "include /etc/ld.so.conf.d/*.conf" > /etc/ld.so.conf \
     && cd /etc/ld.so.conf.d \
     && echo "/usr/local/lib" > /etc/ld.so.conf.d/libc.conf
- 
-     
 # tools
 RUN yum -y install \
         wget \
@@ -51,18 +49,19 @@ RUN yum -y install \
     && yum clean all
 
 #  NGINX
-RUN cd ${SRC_DIR}/ \
-    mkdir nginxzip \
-    &&wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz \
-    &&tar -zxvf nginx-${NGINX_VERSION}.tar.gz \
-    &&cd nginx-${NGINX_VERSION} \
-    &&./configure \
-    #&& make clean > /dev/null \
-    &&make \
+ADD install/nginx-${NGINX_VERSION}.tar.gz ${SRC_DIR}/
+RUN cd ${SRC_DIR}/nginx-${NGINX_VERSION}\
+    &&./configure   --modules-path=${SRC_DIR}/nginx/nginx_modules \
+    --with-http_stub_status_module \
+    --with-http_ssl_module \
+    --with-pcre \
+    # --with-zlib \
+    # --with-openssl \
+    --with-http_realip_module \
+   &&make \
     &&make install \
-    && rm -f ${SRC_DIR}/nginxzip/nginx-${NGINX_VERSION}.tar.gz \
-    && rm -rf ${SRC_DIR}/nginxzip/nginx-${NGINX_VERSION} \
-    && rm -rf ${SRC_DIR}/nginxzip  
+    && rm -f ${SRC_DIR}/nginx-${NGINX_VERSION}.tar.gz \
+    && rm -rf ${SRC_DIR}/nginx-${NGINX_VERSION}
 # php
 ADD install/php-${PHP_VERSION}.tar.gz ${SRC_DIR}/
 RUN cd ${SRC_DIR}/php-${PHP_VERSION} \

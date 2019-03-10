@@ -9,6 +9,7 @@ services:
             - ./web:/web:rw
             - ./tool:/tool:rw
             - ${CONF}/nginx/conf:/usr/local/nginx/conf:rw
+            - ${CONF}/nginx/vhosts:/usr/local/nginx/vhosts:rw
             - ${CONF}/nginx/logs:/usr/local/nginx/logs:rw
             - ${CONF}/php_fpm/:/usr/local/php/${PHP_VERSION}/etc/:rw
             - ${CONF}/php/:/etc/php/${PHP_VERSION}/cli/:rw
@@ -20,12 +21,13 @@ services:
         command: /bin/bash -c 'sh /tool/sh/sh.sh;run'
         restart: always
         tty: true
-        
+         
     mysql:
-        image: mysql:5.6
+        image: mysql:${MYSQL_VERSION}
         volumes:
             - ./mysql/data:/var/lib/mysql:rw
             - ./mysql/conf:/etc/mysql:rw
+             
         privileged: true         
         ports:
             - "3306:3306"
@@ -39,5 +41,7 @@ services:
             # MYSQL_RANDOM_ROOT_PASSWORD：为root用户生成随机密码；
             # MYSQL_ONETIME_PASSWORD ： 设置root用户的密码必须在第一次登陆时修改（只对5.6以上的版本支持）。
             # MYSQL_ROOT_PASSWORD 和 MYSQL_RANDOM_ROOT_PASSWORD 两者必须有且只有一个
+
+ 
  
          
