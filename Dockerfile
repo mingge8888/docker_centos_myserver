@@ -43,6 +43,8 @@ RUN yum -y install \
         unixODBC-devel \
         libjpeg-devel \
         libpng \
+        freetype-devel \
+        libfreetype6-dev \
         libpng-devel \
     && rm -rf /var/cache/{yum,ldconfig}/* \
     && rm -rf /etc/ld.so.cache \
