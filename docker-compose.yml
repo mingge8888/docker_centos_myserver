@@ -18,8 +18,8 @@ services:
             - "80:80"
         depends_on:
             -  mysql  #依赖mysql
-        command: /bin/bash -c 'sh c;run' #开机启动
-        #entrypoint: ["/usr/sbin/init"] #加了这句command无效，但entrypoint可以让centos放开更多功能,例如设置开机启动等
+        command: /bin/bash -c 'sh /tool/sh/sh.sh;run' #开机启动
+        #entrypoint: ["/usr/sbin/init"] #加了这句command无效，entrypoint可以让centos放开更多功能,例如设置开机启动等
         restart: always     #失败重启
         tty: true      #不退出容器
         privileged: true  #加权
