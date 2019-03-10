@@ -1,7 +1,7 @@
  <img src="docker-logo.jpg" width="200" hegiht="200" align="center" />
 
 ##  介绍docker_centos_myserver
-  本项目以`centos7`为宿主容器，集成了`sqlserver`、`swoole`、`redis`、GD等扩展以及 `php`、`mysql`、`nginx`等等环境 ,也可以在此基础上增加其他组件,所有配置文件在项目中的`conf`目录内，请自行进行配置,centos部署环境就是这么简单
+  本项目以`centos7`为宿主容器，集成了`sqlserver-5.6.0`、`swoole-4.0.3`、`redis-1.2.4`、GD等最新扩展以及 `php-7.1.14`、`mysql-5.7`、`nginx-1.15.9`等等最新环境 ,也可以在此基础上增加其他组件,所有配置文件在项目中的`conf`目录内，请自行进行配置,centos部署环境就是这么简单
 
 ##  docker官方详细教程
  * ##  [查看详细教程](http://www.docker.org.cn/book/)
