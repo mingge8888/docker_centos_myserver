@@ -2,7 +2,7 @@
 color 1f
 set INTERVAL=10
 :Again
-docker ps>nul
+docker ps>nul 2>nul
 if "%errorlevel%"=="1" (
 color 1c
 echo *******************************启动失败，服务还没启动,正在重试......*******************************
