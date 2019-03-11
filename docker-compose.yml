@@ -41,7 +41,8 @@ services:
             # MYSQL_RANDOM_ROOT_PASSWORD：为root用户生成随机密码；
             # MYSQL_ONETIME_PASSWORD ： 设置root用户的密码必须在第一次登陆时修改（只对5.6以上的版本支持）。
             # MYSQL_ROOT_PASSWORD 和 MYSQL_RANDOM_ROOT_PASSWORD 两者必须有且只有一个
-
+        restart: always     #失败重启
+        tty: true      #不退出容器
  
  
          
