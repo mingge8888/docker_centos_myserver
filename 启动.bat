@@ -24,6 +24,7 @@ choice /t 2 /d y /n >nul
 exit 
 )else (
 docker-compose up
+cmd /k
 )
 )  else (
 color 1c
