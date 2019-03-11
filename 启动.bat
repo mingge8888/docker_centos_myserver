@@ -2,7 +2,7 @@
 :main
 MODE con: COLS=70 lines=40
 cls
-color 1f
+color 1f      
 :start
 docker ps>nul 2>nul
  if "%errorlevel%"=="0"  (
