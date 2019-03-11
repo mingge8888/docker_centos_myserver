@@ -1,24 +1,30 @@
-ï»¿@ECHO OFF
-@chcp 65001>nul 2>nul
-@ECHO OFF&PUSHD %~DP0 &TITLE dockerå®¹å™¨å¯åŠ¨å·¥å…·å¼€å‘ ä½œè€…:å²‘æ˜Ž QQ2945157617
+@ECHO OFF&PUSHD %~DP0 &TITLE dockerÈÝÆ÷Æô¶¯¹¤¾ß,¿ª·¢×÷Õß:á¯Ã÷ QQ2945157617
+:main
+MODE con: COLS=70 lines=40
+cls
 color 1f
-set INTERVAL=10
-:Again
+:start
 docker ps>nul 2>nul
-if "%errorlevel%"=="1" (
-color 1c
-echo *******************************å¯åŠ¨å¤±è´¥ï¼ŒdockeræœåŠ¡è¿˜æ²¡å¯åŠ¨*******************************
-echo *******************************æ­£åœ¨é‡è¯•å¯åŠ¨å®¹å™¨...... ï¼ˆä»»æ„é”®æ‰§è¡Œé‡è¯•ï¼‰*******************************
-timeout %INTERVAL%>nul
- 
-goto Again
-)  else (
+ if "%errorlevel%"=="0"  (
 color 1f
-echo *******************************dockeræœåŠ¡å·²å¯åŠ¨ï¼Œæ­£åœ¨è¿è¡Œå®¹å™¨*******************************
-docker-compose kill
-docker-compose up
- 
-)
- cmd /K
-
+echo       ©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
+echo       ©§                                                      ©§
+echo       ©§              docker·þÎñÒÑÆô¶¯,ÕýÔÚÆô¶¯ÈÝÆ÷...        ©§
+echo       ©§                                                      ©§
+echo       ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
+docker-compose kill  
+docker-compose up  -d
+ )  else (
+color 1c
+echo       ©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
+echo       ©§                                                      ©§
+echo       ©§             docker·þÎñÎ´Æô¶¯,ÕýÔÚÖØÊÔ...             ©§
+echo       ©§                                                      ©§
+echo       ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿ 
+choice /t 4 /d y /n >nul
+goto start
+ )
+ echo                    Ö´ÐÐÍê³É£¡¸Ã´°¿Ú2Ãëºó×Ô¶¯¹Ø±Õ
+choice /t 2 /d y /n >nul 
+exit  
  
