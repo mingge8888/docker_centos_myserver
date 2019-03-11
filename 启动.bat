@@ -1,8 +1,12 @@
 @ECHO OFF&PUSHD %~DP0 &TITLE dockerÈÝÆ÷Æô¶¯¹¤¾ß,¿ª·¢×÷Õß:á¯Ã÷ QQ2945157617
-:main
 MODE con: COLS=70 lines=40
 cls
-color 1f      
+color 1f 
+echo   ¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï
+echo   ¡ï                                                           ¡ï
+echo   ¡ï ÌáÊ¾: ½¨Òé³õ´ÎÊ¹ÓÃÊÖ¶¯CMDÃüÁî£ºdocker-compose up --build  ¡ï
+echo   ¡ï                                                           ¡ï
+echo   ¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï¡ï
 :start
 docker ps>nul 2>nul
  if "%errorlevel%"=="0"  (
@@ -13,8 +17,15 @@ echo       ©§              docker·þÎñÒÑÆô¶¯,ÕýÔÚÆô¶¯ÈÝÆ÷...        ©§
 echo       ©§                                                      ©§
 echo       ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
 docker-compose kill  
-docker-compose up  -d
- )  else (
+if exist mysql/data/mysql (
+docker-compose up -d 
+echo                    Ö´ÐÐÍê³É£¡¸Ã´°¿Ú2Ãëºó×Ô¶¯¹Ø±Õ
+choice /t 2 /d y /n >nul 
+exit 
+)else (
+docker-compose up
+)
+)  else (
 color 1c
 echo       ©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
 echo       ©§                                                      ©§
@@ -24,7 +35,5 @@ echo       ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©
 choice /t 4 /d y /n >nul
 goto start
  )
- echo                    Ö´ÐÐÍê³É£¡¸Ã´°¿Ú2Ãëºó×Ô¶¯¹Ø±Õ
-choice /t 2 /d y /n >nul 
-exit  
+
  
