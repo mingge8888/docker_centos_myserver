@@ -52,7 +52,7 @@
 
 ### 4、启动docker_centos_myserver容器文件
    * 命令行进入项目 cd /docker_centos_myserver , 输入 `docker-compose up`。
-   * window下最简单方式是双击项目根目录双击 `启动.bat`、`停止.bat` 文件，开机自动启动容器，只需要把 `启动.bat`快捷方式放入启动项即可。
+   * window下最简单方式是双击项目根目录双击 `启动.bat`、`停止.bat` 文件。开机自动启动容器，只需要把 `启动.bat`快捷方式放入启动项即可。
    * 第一次起动容器部署需要一定时间，因机器配置或网络决定 
    * 部署完成查看http演试: [http://127.0.0.1/](http://127.0.0.1/)
    
@@ -60,7 +60,7 @@
 ### 5、容器管理
   ####   每次要输入繁琐的命令行,对于容器管理非常的不便，特别是新手，对于可视化管理容器提供下面两个方案：
  * 1、使用`vscode编辑器`，在vscode安装`docker`扩展工具
- * 2、使用项目自带的`portainer容器管理容器`,项目构建完成后打开[http://127.0.0.1:9000/](http://127.0.0.1:9000/) 即可以访问。 
+ * 2、使用项目自带的`portainer管理容器`,项目构建完成后打开[http://127.0.0.1:9000/](http://127.0.0.1:9000/) 即可以访问。 
             
     关于portainer设置教程，请点击 
      [https://cloud.tencent.com/developer/article/1351922](https://cloud.tencent.com/developer/article/1351922) 
