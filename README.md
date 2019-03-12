@@ -65,7 +65,7 @@
     关于portainer设置教程，请点击 
      [https://cloud.tencent.com/developer/article/1351922](https://cloud.tencent.com/developer/article/1351922) 
   
-### 5、注意事项
+### 6、注意事项
    * ###  `本项目默认使用80、9501、3306、9000端口来挂载演试项目，请保证80、9501、3306、9000端口不要被占用，否则容器动会启动失败，也可在 docker-compose.yml自行更改端口`。
 
    * ###  `切记: MYSQL是另开的容器，用php连接mysql时，连接地址127.0.0.1连不上的，应该填写容器名称,如: mysql`。
