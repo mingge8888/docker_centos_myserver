@@ -1,23 +1,24 @@
-version: "3"
+#docker-compose.yml请使vscode进行编辑,因对缩进有严格规范，容易引起报错
+version: "3" #docker版本，写不以，会报错
 services:
-    docker_centos_myserver:
+    docker_centos_myserver: #定义容器名称
         build:
-            context: .
+            context: . #根目录指向
             args:
-                PHP_VERSION: ${PHP_VERSION}
+                PHP_VERSION: ${PHP_VERSION} #php版本变量传给Dockerfile  ${PHP_VERSION}取自.env文件
         volumes:  
             - ./web:/web:rw
             - ./tool:/tool:rw
-            - ${CONF}/nginx/conf:/usr/local/nginx/conf:rw
-            - ${CONF}/nginx/vhosts:/usr/local/nginx/vhosts:rw
-            - ${CONF}/nginx/logs:/usr/local/nginx/logs:rw
-            - ${CONF}/php_fpm/:/usr/local/php/${PHP_VERSION}/etc/:rw
-            - ${CONF}/php/:/etc/php/${PHP_VERSION}/cli/:rw
+            - ${CONF}/nginx/conf:/usr/local/nginx/conf:rw  #nginx设置目录
+            - ${CONF}/nginx/vhosts:/usr/local/nginx/vhosts:rw  #web管理
+            - ${CONF}/nginx/logs:/usr/local/nginx/logs:rw   #nginx日记
+            - ${CONF}/php_fpm/:/usr/local/php/${PHP_VERSION}/etc/:rw #php_fpm管理
+            - ${CONF}/php/:/etc/php/${PHP_VERSION}/cli/:rw  #php.ini目录
         ports:
-            - "9501:9501"
-            - "80:80"
+            - "9501:9501" #多余的，可以删除
+            - "80:80"  #映射80端口，提供http://127.0.0.1
         depends_on:
-            -  mysql  #依赖mysql
+            -  mysql  #依赖mysql 
         command: /bin/bash -c 'sh /tool/sh/sh.sh run' #开机启动
         #entrypoint: ["/usr/sbin/init"] #加了这句command无效，entrypoint可以让centos放开更多功能,例如设置开机启动等
         restart: always     #失败重启
@@ -26,13 +27,13 @@ services:
     mysql:
         image: mysql:${MYSQL_VERSION}
         volumes:
-            - ./mysql/data:/var/lib/mysql:rw
-            - ./mysql/conf:/etc/mysql:rw
+            - ./mysql/data:/var/lib/mysql:rw  #mysql数据库目录
+            - ./mysql/conf:/etc/mysql:rw      #mysql设置目录
         privileged: true     #加权     
         ports:
-            - "3306:3306"
+            - "3306:3306"       #mysql端口映射，默认3306
         environment:
-            MYSQL_ROOT_PASSWORD: "root"
+            MYSQL_ROOT_PASSWORD: "root" #mysql密码更改
             # MYSQL_ROOT_PASSWORD ： root用户的密码，这里设置的初始化密码为`123456`；
             # MYSQL_DATABASE ： 运行时需要创建的数据库名称；
             # MYSQL_USER ： 运行时需要创建用户名，与MYSQL_PASSWORD一起使用；
@@ -42,7 +43,23 @@ services:
             # MYSQL_ONETIME_PASSWORD ： 设置root用户的密码必须在第一次登陆时修改（只对5.6以上的版本支持）。
             # MYSQL_ROOT_PASSWORD 和 MYSQL_RANDOM_ROOT_PASSWORD 两者必须有且只有一个
         restart: always     #失败重启
-        tty: true      #不退出容器
- 
- 
+        tty: true           #不退出容器
+
+    portainer:               #portainer 是docker容器可视化管理器，使用以后你就不用自己打命令这么累了，然后添加接口 docker.for.win.localhost:2375
+        image: portainer/portainer:latest 
+        privileged: true     #加权  
+        restart: always      #失败重启   
+        tty: true            #不退出容器
+        ports:
+            - 9000:9000  #端口是9000哦
+
+    # gitea:         #git工具，需要git服务端的请删掉注释
+    #     image: gitea/gitea:latest 
+    #     privileged: true     #加权  
+    #     volumes:
+    #         -  挂载仓库:挂载仓库:rw #这里自己设置哦
+    #     ports:
+    #         - "3000:3000"
+    #     restart: always     #失败重启
+    #     tty: true          #不退出容器   
          
