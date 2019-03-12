@@ -15,7 +15,7 @@ services:
             - ${CONF}/php_fpm/:/usr/local/php/${PHP_VERSION}/etc/:rw #php_fpm管理
             - ${CONF}/php/:/etc/php/${PHP_VERSION}/cli/:rw  #php.ini目录
         ports:
-            - "9501:9501" #多余的，可以删除
+            #- "9501:9501"  
             - "80:80"  #映射80端口，提供http://127.0.0.1
         depends_on:
             -  mysql  #依赖mysql 
