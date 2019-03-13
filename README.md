@@ -27,7 +27,7 @@
 
 ### 2、设置代理（重要）
    
-  *  windows、Mac环境下，安装完成后等待右下角鲸鱼图标至静止状态为服务启动动完成，
+  *  windows、Mac环境下，安装完成后等待右下角鲸鱼图标至静止状态为服务启动完成，
   *  windows、Mac环境下，启动完成后在右下角鲸鱼图标点击右键,再点击`Strings`,在界面的左边栏目找到`Daemon`,然后在右边`Registry mirrosrs`添加下面地址。
       ```html
       http://f1361db2.m.daocloud.io
@@ -52,7 +52,7 @@
 
 ### 4、启动docker_centos_myserver容器文件
    * 命令行进入项目 cd /docker_centos_myserver , 输入 `docker-compose up`。
-   * window下最简单方式是根目录内双击 `启动.bat`、`停止.bat` 文件。开机自动启动容器，只需要把 `启动.bat`快捷方式放入启动项即可。
+   * window下最简单方式是根目录内双击 `启动.bat`、`停止.bat` 文件。而开机自动启动容器，只需要把 `启动.bat`快捷方式放入启动项即可。
    * 第一次起动容器部署需要一定时间，因机器配置或网络决定 
    * 部署完成查看http演试: [http://127.0.0.1/](http://127.0.0.1/)
    
